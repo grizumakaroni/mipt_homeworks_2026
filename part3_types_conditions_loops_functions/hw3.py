@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 from typing import Any
 
 UNKNOWN_COMMAND_MSG = "Unknown command!"
