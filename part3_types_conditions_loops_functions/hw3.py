@@ -304,6 +304,7 @@ def build_transaction_stats(
 ) -> StatsData:
     total_income, month_income = collect_income_totals(report_date)
     total_cost, month_expenses, month_categories = collect_cost_totals(report_date)
+
     return total_income - total_cost, month_income, month_expenses, month_categories
 
 
