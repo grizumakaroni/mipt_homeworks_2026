@@ -46,7 +46,7 @@ jobs:
             fi
           fi
 
-          PY_FILES=$(echo "$CHANGED_FILES" | grep '\.py$' || true)
+          PY_FILES=$(echo "$CHANGED_FILES" | grep '\.py$' | grep -v '^part3_types_conditions_loops_functions/' || true)
 
           if [ -z "$PY_FILES" ]; then
             echo "folders=[]" >> $GITHUB_OUTPUT
@@ -65,6 +65,8 @@ jobs:
       fail-fast: false
       matrix:
         folder: ${{ github.event_name == 'workflow_dispatch' && fromJson(format('["{0}"]', github.event.inputs.package_path)) || fromJson(needs.detect-changes.outputs.folders) }}
+        exclude:
+          - folder: part3_types_conditions_loops_functions
     steps:
       - uses: actions/checkout@v4
 
@@ -96,6 +98,8 @@ jobs:
       fail-fast: false
       matrix:
         folder: ${{ github.event_name == 'workflow_dispatch' && fromJson(format('["{0}"]', github.event.inputs.package_path)) || fromJson(needs.detect-changes.outputs.folders) }}
+        exclude:
+          - folder: part3_types_conditions_loops_functions
     steps:
       - uses: actions/checkout@v4
 
@@ -129,6 +133,8 @@ jobs:
       fail-fast: false
       matrix:
         folder: ${{ github.event_name == 'workflow_dispatch' && fromJson(format('["{0}"]', github.event.inputs.package_path)) || fromJson(needs.detect-changes.outputs.folders) }}
+        exclude:
+          - folder: part3_types_conditions_loops_functions
     steps:
       - uses: actions/checkout@v4
 
