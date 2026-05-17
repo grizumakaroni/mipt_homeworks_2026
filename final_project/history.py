@@ -36,7 +36,7 @@ class ChatHistory:
             latest = self._messages[-1]
             self._messages[-1] = Message(
                 role=latest.role,
-                content=latest.content[-self._limit_chars:],
+                content=latest.content[-self._limit_chars :],
             )
 
     def _total_chars(self) -> int:
