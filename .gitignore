@@ -144,6 +144,10 @@ ENV/
 env.bak/
 venv.bak/
 
+# Local LLM assistant config with secrets
+config.yaml
+final_project/config.yaml
+
 # Spyder project settings
 .spyderproject
 .spyproject
